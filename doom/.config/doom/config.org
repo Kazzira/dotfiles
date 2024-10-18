@@ -197,8 +197,9 @@ This section currently only has code for putting c++ comments for doxygen.
 ;; C Documentatin Comment Style
 ;;
 (setq c-doc-comment-style '((c-mode . gtkdoc)
-                            (cpp-mode . doxygen)))
+                            (c++-mode . doxygen)))
 #+end_src
+
 
 * Org Directory
 My org directory is just ~/org Use a function stolen online to get every file.

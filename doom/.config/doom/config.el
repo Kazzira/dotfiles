@@ -98,7 +98,7 @@
 ;; C Documentatin Comment Style
 ;;
 (setq c-doc-comment-style '((c-mode . gtkdoc)
-                            (cpp-mode . doxygen)))
+                            (c++-mode . doxygen)))
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!

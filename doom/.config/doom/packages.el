@@ -51,3 +51,4 @@
 
 ;; org-roam
 (package! org-roam)
+(package! highlight-doxygen)
