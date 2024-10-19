@@ -1,0 +1,2 @@
+#!/bin/bash
+WINEPREFIX=/home/zdmeyer/.steam/steam/steamapps/compatdata/22380/pfx winecfg
