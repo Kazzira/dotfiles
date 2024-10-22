@@ -47,8 +47,12 @@
  '(org-level-5 ((t (:inherit outline-5 :height 1.09))))
 )
 
+(setq org-hide-emphasis-markers t)
+
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
 ;; This determines the style of line numbers in effect. If set to `nil', line
-;; numbers are disabled. For relative line numbers, set this to `relative'.
+; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
 
 (require 'dap-gdb-lldb)

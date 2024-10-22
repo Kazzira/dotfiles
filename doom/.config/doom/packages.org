@@ -57,9 +57,16 @@ I like to preserve the comments in packages.el.
 ;; (unpin! t)
 #+end_src
 
+* DOXYGEN
+
+#+begin_src emacs-lisp
+(package! highlight-doxygen)
+#+end_src
+
 * ORG MODE PACKAGES
 Here are some of the org mode packages I use.
 #+begin_src emacs-lisp
 ;; org-roam
 (package! org-roam)
+(package! org-bullets)
 #+end_src

@@ -49,6 +49,8 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
 
+(package! highlight-doxygen)
+
 ;; org-roam
 (package! org-roam)
-(package! highlight-doxygen)
+(package! org-bullets)

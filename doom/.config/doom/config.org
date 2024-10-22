@@ -7,7 +7,10 @@
 * Table of Contents :toc:
 - [[#opening-comments][Opening Comments]]
 - [[#themes][Themes]]
-- [[#changing-org-level-sizes][Changing Org Level Sizes]]
+- [[#org-mode][Org Mode]]
+  - [[#header-size-customization][Header Size Customization]]
+  - [[#hide-emphasis-markers][Hide Emphasis Markers]]
+  - [[#enable-org-bullets-mode][Enable Org-Bullets-Mode]]
 - [[#display-line-numbers-type][Display Line Numbers Type]]
 - [[#development-environment][Development Environment]]
   - [[#c-environment][C++ Environment]]
@@ -71,7 +74,10 @@ Keep the dark mode theme for now.
 (setq doom-theme 'doom-one)
 #+end_src
 
-* Changing Org Level Sizes
+* Org Mode
+This section contains my org mode tweaks.
+
+** Header Size Customization
 Some variety in header sizes.
 
 #+begin_src emacs-lisp
@@ -85,11 +91,21 @@ Some variety in header sizes.
 )
 #+end_src
 
+** Hide Emphasis Markers
+#+begin_src emacs-lisp
+(setq org-hide-emphasis-markers t)
+#+end_src
+
+** Enable Org-Bullets-Mode
+This code will hook org-mode to enable org-bullets-mode.
+#+begin_src emacs-lisp
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+#+end_src
 
 * Display Line Numbers Type
 #+begin_src emacs-lisp
 ;; This determines the style of line numbers in effect. If set to `nil', line
-;; numbers are disabled. For relative line numbers, set this to `relative'.
+; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
 
 #+end_src
