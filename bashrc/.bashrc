@@ -12,8 +12,8 @@ export PATH="$HOME/github/vcpkg:$HOME/.emacs.d/bin:$HOME/bin:$PATH"
 export WINE="/usr/bin/wine"
 export WINETRICKS="/usr/bin/winetricks"
 export WINEPATH="Z:\\home\\zdmeyer\\.local\\share\\Steam\\steamapps\\compatdata\\489830\\pfx\\drive_c\\Program Files\\dotnet"
-export VCPKG_ROOT="$HOME/github/vcpkg"
-export VCPKG_INSTALLATION_ROOT="$HOME/github/vcpkg"
+export VCPKG_ROOT="$HOME/dev/vcpkg"
+export VCPKG_INSTALLATION_ROOT="$HOME/dev/vcpkg"
 export PYTHONSTARTUP="$HOME/.config/python-startup/startup.py"
 #export GTK_THEME=Adwaita:dark
 #export QT_STYLE_OVERRIDE=adwaita-dark
@@ -21,16 +21,13 @@ export PYTHONSTARTUP="$HOME/.config/python-startup/startup.py"
 
 alias skyrim-winecfg=/home/zdmeyer/.bash-alias/skyrim-winecfg
 
-function pbcopy()
-{
+function pbcopy() {
     xsel --input --clipboard
 }
 
-function pbpaste()
-{
+function pbpaste() {
     xsel --output --clipboard
 }
-
 
 # Because I'm a windows user...
 alias cls='clear'
