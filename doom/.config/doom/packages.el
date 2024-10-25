@@ -54,3 +54,7 @@
 ;; org-roam
 (package! org-roam)
 (package! org-bullets)
+
+(package! paredit)
+
+(package! multi-vterm)
