@@ -15,7 +15,7 @@ import os
 #
 # Go into the python startup directory.
 #
-os.chdir('/home/zdmeyer/.config/python-startup')
+os.chdir("/home/zdmeyer/.config/python-startup")
 
 
 #
@@ -33,7 +33,7 @@ def cls() -> None:
     """
     Clears the screen. Uses "clear".
     """
-    sys('clear')
+    sys("clear")
 
 
 def now() -> datetime.datetime:
