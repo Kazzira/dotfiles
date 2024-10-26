@@ -125,6 +125,11 @@ If FILEXT is provided, return files with extension FILEXT instead."
                :desc "Create Directory" "d" #'treemacs-create-dir
                :desc "Change Directory" "c" #'treemacs-select-directory))
 
+(map! :leader
+      (:prefix ("z x" . "Terminals")
+       :desc "Open Multi-Vterm Project" "v" #'multi-vterm-project
+       :desc "Open Eshell" "e" #'eshell))
+
 ;;
 ;; C Documentatin Comment Style
 ;;

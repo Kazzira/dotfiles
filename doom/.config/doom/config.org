@@ -239,6 +239,19 @@ Here are the keybindings for the dired file manager.
 
 #+end_src
 
+*** Term
+| Key Binding    | Command             | Description                         |
+|----------------+---------------------+-------------------------------------|
+| <LEADER> z x v | multi-vterm-project | Opens a vterm for the given project |
+| <LEADER> z x e | eshell              | Opens an eshell                     |
+
+#+begin_src emacs-lisp :tangle config.el
+(map! :leader
+      (:prefix ("z x" . "Terminals")
+       :desc "Open Multi-Vterm Project" "v" #'multi-vterm-project
+       :desc "Open Eshell" "e" #'eshell))
+#+end_src
+
 ** Documentation Comments
 This section currently only has code for putting c++ comments for doxygen.
 
