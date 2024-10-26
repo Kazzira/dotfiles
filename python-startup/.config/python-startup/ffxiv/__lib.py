@@ -4,6 +4,21 @@ import os
 
 
 def calculate_levequest_turnin_days(number_of_items: int) -> float:
+    """
+    Returns the number of days of turn-ins based on the number of items.
+    This assumes caller is calculating 3 item turn ins, making 18 of that
+    item per day.
+
+    Parameters
+    ------------------------
+    number_of_items : int
+        The number of items to turn in.
+
+    Returns
+    ------------------------
+    float
+        The number of days of turn-ins without crafting more items.
+    """
     return number_of_items / 18.0
 
 
