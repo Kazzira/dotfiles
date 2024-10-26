@@ -3,6 +3,10 @@
 import os
 
 
+def calculate_levequest_turnin_days(number_of_items: int) -> float:
+    return number_of_items / 18.0
+
+
 def commend_party_member(max_members: int) -> int:
     """
     Returns the party member index in order to commend a party member.
