@@ -7,6 +7,7 @@
 - [[#configel][Config.el]]
   - [[#opening-comments][Opening Comments]]
   - [[#org-directory][Org Directory]]
+  - [[#org-directory-initel][Org Directory init.el]]
   - [[#themes][Themes]]
   - [[#org-mode][Org Mode]]
   - [[#display-line-numbers-type][Display Line Numbers Type]]
@@ -94,8 +95,23 @@ If FILEXT is provided, return files with extension FILEXT instead."
           (add-to-list 'org-file-list org-file)))))))
 
 (setq org-directory "~/org/")
-(setq org-agenda-files (append (sa-find-org-file-recursively "~/org/")))
+(setq org-roam-directory "~/org/")
 
+(defun zdm-org-agenda-refresh-files ()
+  (setq org-agenda-files (append (sa-find-org-file-recursively "~/org/"))))
+
+(add-hook 'after-save-hook 'zdm-org-agenda-refresh-files)
+#+end_src
+
+** Org Directory init.el
+Run ~/org/elisp/init.el upon reloading config.
+
+#+begin_src emacs-lisp
+(defvar zdm-org-elisp-directory-path
+  (concat org-directory "elisp/")
+  "Private org mode ELISP directory path")
+
+(load-file (concat org-directory "/elisp/init.el"))
 #+end_src
 
 ** Themes
