@@ -8,7 +8,7 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
-export PATH="$HOME/github/vcpkg:$HOME/.emacs.d/bin:$HOME/bin:$PATH"
+export PATH="$HOME/dev/vcpkg:$HOME/.emacs.d/bin:$HOME/bin:$PATH"
 export WINE="/usr/bin/wine"
 export WINETRICKS="/usr/bin/winetricks"
 export WINEPATH="Z:\\home\\zdmeyer\\.local\\share\\Steam\\steamapps\\compatdata\\489830\\pfx\\drive_c\\Program Files\\dotnet"
@@ -37,3 +37,7 @@ alias v='nvim'
 
 alias emacs='emacsclient -c'
 alias less='less -r'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
