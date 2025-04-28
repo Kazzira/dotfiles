@@ -18,6 +18,7 @@
   - [[#closing-comments][Closing Comments]]
 - [[#packagesel][Packages.el]]
   - [[#opening-comments-1][Opening Comments]]
+  - [[#programming][Programming]]
   - [[#doxygen][DOXYGEN]]
   - [[#org-mode-packages][ORG MODE PACKAGES]]
   - [[#paredit][Paredit]]
@@ -111,7 +112,7 @@ Run ~/org/elisp/init.el upon reloading config.
   (concat org-directory "elisp/")
   "Private org mode ELISP directory path")
 
-(load-file (concat org-directory "/elisp/init.el"))
+(load-file (concat "~/org/" "elisp/init.el"))
 #+end_src
 
 ** Themes
@@ -179,6 +180,25 @@ Only C++ is considered for now.
   (require 'dap-cpptools)
   (require 'dap-lldb))
 
+#+end_src
+
+*** Copilot
+#+begin_src emacs-lisp :tangle config.el
+(use-package! copilot
+  :hook (prog-mode . copilot-mode)
+  :bind (:map copilot-completion-map
+              ("<tab>" . 'copilot-accept-completion)
+              ("TAB" . 'copilot-accept-completion)
+              ("C-TAB" . 'copilot-accept-completion-by-word)
+              ("C-<tab>" . 'copilot-accept-completion-by-word)
+              ("C-n" . 'copilot-next-completion)
+              ("C-p" . 'copilot-previous-completion))
+
+  :config
+  (add-to-list 'copilot-indentation-alist '(prog-mode 2))
+  (add-to-list 'copilot-indentation-alist '(org-mode 2))
+  (add-to-list 'copilot-indentation-alist '(text-mode 2))
+  (add-to-list 'copilot-indentation-alist '(emacs-lisp-mode 2)))
 #+end_src
 
 ** Syntax Highlighting Changes For Files
@@ -372,6 +392,14 @@ I like to preserve the comments in packages.el.
 ;; (unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
+#+end_src
+
+** Programming
+#+begin_src emacs-lisp :tangle packages.el
+(package! cov)
+(package! coverlay)
+(package! copilot
+  :recipe (:host github :repo "copilot-emacs/copilot.el" :files ("*.el")))
 #+end_src
 
 ** DOXYGEN
