@@ -215,7 +215,12 @@ Currently, it's just the .inl and .tpp files.
 ;;
 (add-to-list 'auto-mode-alist '(".*\.inl" . cpp-mode))
 (add-to-list 'auto-mode-alist '(".*\.tpp" . cpp-mode))
+
+(eval-after-load 'flycheck
+  '(add-hook 'flycheck-mode-hook #'flycheck-clang-tidy-setup))
+(setq flycheck-clang-tidy-executable "clang-tidy-19")
 #+end_src
+
 
 ** Custom Keybinds
 This section contains my custom keybindings for Doom Emacs.
@@ -400,6 +405,8 @@ I like to preserve the comments in packages.el.
 (package! coverlay)
 (package! copilot
   :recipe (:host github :repo "copilot-emacs/copilot.el" :files ("*.el")))
+(package! flycheck-clang-tidy
+  :recipe (:host github :repo "Kazzira/flycheck-clang-tidy" :files ("*.el")))
 #+end_src
 
 ** DOXYGEN
